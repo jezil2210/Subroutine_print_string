@@ -12,7 +12,7 @@ _start:
       	mov rax, text2
         call _print
  	
-	      mov rax, 60
+	mov rax, 60
         xor rdi, rdi
         syscall
 
