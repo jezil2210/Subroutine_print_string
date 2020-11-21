@@ -1,11 +1,12 @@
 section .data
- 	     text1 db "Salve, galera!",10,0
-   	   text2 db "Dnv, salve?",10,0
+ 	 text1 db "Salve, galera!",10,0
+   	 text2 db "Dnv, salve?",10,0
+
 section .text
- 	     global _start
+ 	global _start
 
 _start: 
-     	  mov rax, text1
+     	mov rax, text1
         call _print
     
       	mov rax, text2
@@ -16,10 +17,10 @@ _start:
         syscall
 
 _print:
-	      push rax
- 	      mov rbx, 0  
+	push rax
+        mov rbx, 0  
 _loop:
-	      inc rax
+	inc rax
         inc rbx 
         mov cl, [rax] ; cl is the  8 bits(1 byte) part of the register rcx(64bits),
                       ; it's being used because we have to compare each character 
